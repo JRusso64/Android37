@@ -10,11 +10,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
     private List<Album> albums;
     private AlbumAdapter albumAdapter;
 
+    private void openAlbum(Album album) {
+        // Handle opening the album
+        // For example:
+        Intent intent = new Intent(this, AlbumActivity.class);
+        intent.putExtra("album_name", album.getName());
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -27,7 +35,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         albums = new ArrayList<>();
-        albumAdapter = new AlbumAdapter(albums);
+        albumAdapter = new AlbumAdapter(albums, new AlbumAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Album album) {
+                // Handle opening the album
+                // For example:
+                openAlbum(album);
+            }
+        });
+
+
+
         recyclerView.setAdapter(albumAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

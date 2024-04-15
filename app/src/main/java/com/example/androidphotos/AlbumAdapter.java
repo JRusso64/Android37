@@ -13,9 +13,11 @@ import java.util.List;
 
 public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> {
     private List<Album> albums;
+    private OnItemClickListener listener;
 
-    public AlbumAdapter(List<Album> albums) {
+    public AlbumAdapter(List<Album> albums, OnItemClickListener listener) {
         this.albums = albums;
+        this.listener = listener;
     }
 
     @NonNull
@@ -31,6 +33,16 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Album album = albums.get(position);
         holder.albumNameTextView.setText(album.getName());
+
+        // Set click listener for the item
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemClick(album);
+                }
+            }
+        });
     }
 
     @Override
@@ -45,5 +57,10 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             super(itemView);
             albumNameTextView = itemView.findViewById(R.id.albumNameTextView);
         }
+    }
+
+    // Interface for item click listener
+    public interface OnItemClickListener {
+        void onItemClick(Album album);
     }
 }
