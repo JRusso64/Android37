@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Search Results"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentTop="true"
+        android:padding="8dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_results_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextText"
+        android:layout_above="@+id/btnLayout"
+        android:layout_marginTop="8dp" /> <!-- This adds a little space between the EditText and RecyclerView -->
+
+    <LinearLayout
+        android:id="@+id/btnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="8dp"> <!-- Padding added for consistent spacing -->
+
+        <Button
+            android:id="@+id/home_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:layout_marginEnd="8dp"/> <!-- Margin added between buttons -->
+
+        <Button
+            android:id="@+id/create_album_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Album"/>
+    </LinearLayout>
+
+</RelativeLayout>

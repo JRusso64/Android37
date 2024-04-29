@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- First Tag Type Spinner -->
+    <Spinner
+        android:id="@+id/tag_type_spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- First Tag Value AutoCompleteTextView -->
+    <AutoCompleteTextView
+        android:id="@+id/tag_value_input1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter first tag value"
+        android:inputType="text"/>
+
+    <!-- Second Tag Type Spinner -->
+    <Spinner
+        android:id="@+id/tag_type_spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Second Tag Value AutoCompleteTextView -->
+    <AutoCompleteTextView
+        android:id="@+id/tag_value_input2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter second tag value"
+        android:inputType="text"/>
+</LinearLayout>

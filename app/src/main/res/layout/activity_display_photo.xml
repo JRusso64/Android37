@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/buttonPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Back" />
+
+        <Button
+            android:id="@+id/addTagButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add Tag" />
+
+        <Button
+            android:id="@+id/removeTagButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Remove Tag" />
+
+        <Button
+            android:id="@+id/slideshowButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Slideshow" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/photoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/buttonPanel"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/captionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/photoImageView"
+        android:maxHeight="100dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="18sp"
+        android:background="@android:color/transparent"
+        android:layout_marginBottom="16dp" /> <!-- Margin to create space between caption and tags list -->
+
+    <ListView
+        android:id="@+id/tagsListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/captionTextView" />
+</RelativeLayout>
